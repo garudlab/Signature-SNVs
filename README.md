@@ -11,7 +11,7 @@ A signature SNV is a SNV that has a higher probability of coming from one source
 The general workflow is as follows:
 
 ```mermaid
-
+graph LR;
 A[Metagenomic shotgun data] -->B(MIDAS)
     B --> C{Signature-SNVs}
     C --> D{FEAST}
@@ -27,7 +27,8 @@ seq->mid->sig->fea -->
 
 
 
-![alt text](https://github.com/garudlab/signature_snvs/tree/main/misc/Official_Abstract.png?raw=true)
+![alt text](https://github.com/garudlab/signature-snvs/tree/main/misc/Official_Abstract.png?raw=true)
+
 
 ## Table of Contents
 
