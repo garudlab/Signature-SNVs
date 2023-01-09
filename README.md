@@ -17,6 +17,8 @@ A(Metagenomic shotgun data)-->B(MIDAS)
     C--> D(FEAST)
 ```
 
+[example_1](./example_1) is a toy example of the type of input data you would want to have for Signature-SNVs, while [example_2](./example_2) maybe a more realistic example of the type of input data you may have. 
+
 
 
 
