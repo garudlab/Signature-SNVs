@@ -40,7 +40,7 @@ A(Metagenomic shotgun data)-->B(MIDAS)
     ```
     git clone https://github.com/garudlab/Signature-SNVs.git
     ```
-1. [Optional] Go into directory SNV-FEAST and Create a virtual environment
+1. [Optional] Go into directory Signature-SNVs and Create a virtual environment
     Note: to avoid any dependency conflicts, we recommend installing this in a virtual environment
     ```
     python3 -m pip install --user virtualenv"
@@ -48,11 +48,11 @@ A(Metagenomic shotgun data)-->B(MIDAS)
     source ./snv_feast_env/bin/activate
     ```
 
-2. Install SNV-FEAST with pip. (takes about 1 min)
+2. Install Signature-SNVs with pip. (takes about 1 min)
     This also automatically updates any dependencies. 
 
     ```
-    python3 -m pip install Signature-SNVs==0.0.8
+    python3 -m pip install Signature-SNVs==0.0.1
     ```
 
 2. [Option 1] Run code as a module. Start up python in command line interface, then import and run module with example1
@@ -82,11 +82,11 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 
 ## <a name="quickstart"> Quick Start </a>
 
-1. Install SNV-FEAST with pip. (takes about 1 min)
+1. Install Signature-SNVs with [pip](https://pypi.org/project/Signature-SNVs/0.0.1/). (takes about 1 min)
     This also automatically updates any dependencies. 
 
     ```
-    python3 -m pip install SNV-FEAST==0.0.8
+    pip install Signature-SNVs==0.0.1
     ```
 
 2. Set up your directories and config.
@@ -153,12 +153,12 @@ In the toy example_1
 Example config.yaml:
 
 ```
-input_dir: '/Users/leahbriscoe/Documents/FEASTX/snv-feast/example_1/'
-snp_dir: '/Users/leahbriscoe/Documents/FEASTX/snv-feast/example_1/midas_output/snps/'
-output_dir: '/Users/leahbriscoe/Documents/FEASTX/snv-feast/example_1/signature_snvs/'
+input_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_1/'
+snp_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_1/midas_output/snps/'
+output_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_1/signature_snvs/'
 ```
 ## <a name="preprocessing"> Optional Pre-Processing </a>
-Files for post-processing of the signature SNV output are [here](https://github.com/garudlab/SNV-FEAST/tree/main/preprocessing).
+Files for post-processing of the signature SNV output are [here](https://github.com/garudlab/Signature-SNVs/tree/main/preprocessing).
 We had determined a window size of 200,000 bp was helpful for analysis. First we determined the length of the species files
 
 To be run inside your data directory (e.g. example_1)
@@ -168,7 +168,7 @@ To be run inside your data directory (e.g. example_1)
 
 ## <a name="postprocessing"> Optional Post-Processing </a>
 
-Files for post-processing of the signature SNV output are [here](https://github.com/garudlab/SNV-FEAST/tree/main/postprocessing).
+Files for post-processing of the signature SNV output are [here](https://github.com/garudlab/Signature-SNVs/tree/main/postprocessing).
 
 1. Step 1: Merge signature SNV files across windows per species per source tracking experiment
 2. Step 2: Merge signature SNV files across speciess per source tracking experiment
