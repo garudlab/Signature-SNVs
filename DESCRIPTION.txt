@@ -1,0 +1,47 @@
+SNV-FEAST
+======
+
+A python script to generate signature SNVs from MIDAS output for a given sink and set of sources in a given window of the species genome
+
+The code is Python 3.
+
+Installation
+------------
+
+Fast install:
+
+::
+
+    pip install snv_feast
+
+For a manual install get this package:
+
+::
+
+    wget https://github.com/garudlab/snv_feast
+    unzip main.zip
+    rm main.zip
+    cd snv_feast-main
+
+Install the package:
+
+::
+
+    python setup.py install    
+
+Example
+--------
+
+.. code:: python
+
+    from geo import locator
+
+    # get formatted address of any location
+    print locator.get_address("rohini, delhi")
+
+    # get co-ordinates of location
+    print locator.get_coordinates("delhi")
+
+    
+Credit:
+Briscoe, Leah; Halperin, Eran; and Garud, Nandita

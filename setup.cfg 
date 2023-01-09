@@ -1,0 +1,6 @@
+[metadata]
+name = SNV-FEAST
+version = 0.0.2
+
+[options]
+packages = find:
