@@ -12,16 +12,9 @@ The general workflow is as follows:
 
 ```mermaid
 graph LR;
-A[Metagenomic shotgun data] -->B(MIDAS)
-    B --> C{Signature-SNVs}
-    C --> D{FEAST}
-<!-- 
-seq=>start: Metagenomic shotgun data
-mid=>midas: MIDAS
-sig=>SignatureSNVs: Signature-SNVs
-fea=>FEAST
-
-seq->mid->sig->fea -->
+A(Metagenomic shotgun data)-->B(MIDAS)
+    B--> C(Signature-SNVs)
+    C--> D(FEAST)
 ```
 
 
