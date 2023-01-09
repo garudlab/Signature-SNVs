@@ -20,7 +20,7 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 
 
 
-![alt text](https://github.com/garudlab/signature-snvs/tree/main/misc/Official_Abstract.png?raw=true)
+![Diagram](./misc/Official_Abstract.png)
 
 
 ## Table of Contents
