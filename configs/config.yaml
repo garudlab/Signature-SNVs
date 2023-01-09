@@ -1,9 +1,9 @@
 #example_1:
-# input_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature_SNVs/example_1'
-# snp_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature_SNVs/example_1/midas_output/snps'
-# output_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature_SNVs/example_1/signature_snvs'
+input_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_1'
+snp_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_1/midas_output/snps'
+output_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_1/signature_snvs'
 
 #example_2:
-input_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature_SNVs/example_2'
-snp_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature_SNVs/example_2/midas_output/snps'
-output_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature_SNVs/example_2/signature_snvs'
+# input_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_2'
+# snp_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_2/midas_output/snps'
+# output_dir: '/Users/leahbriscoe/Documents/FEASTX/Signature-SNVs/example_2/signature_snvs'
