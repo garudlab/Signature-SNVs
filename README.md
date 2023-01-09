@@ -45,7 +45,7 @@ A(Metagenomic shotgun data)-->B(MIDAS)
     ```
     python3 -m pip install --user virtualenv"
     python3 -m virtualenv signature_snvs_env
-    source ./snv_feast_env/bin/activate
+    source ./signature_snvs_env/bin/activate
     ```
 
 2. Install Signature-SNVs with pip. (takes about 1 min)
@@ -71,7 +71,7 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 4. [Option 2] Run on command line with example1
 
     ```
-    python <site-packages_directory>/snv_feast/snv_feast_cli.py --species Bacteroides_uniformis_57318 --min_reads 5 --start_index 1 --end_index 200 --config_file_path configs/config.yaml
+    python <site-packages_directory>/signature_snvs/signature_snvs_cli.py --species Bacteroides_uniformis_57318 --min_reads 5 --start_index 1 --end_index 200 --config_file_path configs/config.yaml
     ```
 
     For example, my site-packages directory is `./lib/python3.9/site-packages/`
@@ -117,7 +117,7 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 4. [Option 2] Run on command line
 
     ```
-    python <site-packages_directory>/snv_feast/snv_feast_cli.py --species Bacteroides_uniformis_57318 --min_reads 5 --start_index 1 --end_index 200 --config_file_path configs/config.yaml
+    python <site-packages_directory>/signature_snvs/signature_snvs_cli.py --species Bacteroides_uniformis_57318 --min_reads 5 --start_index 1 --end_index 200 --config_file_path configs/config.yaml
     ```
 
     For example, my site-packages directory is `./lib/python3.9/site-packages/`
