@@ -1,6 +1,6 @@
 # Signature SNVs for FEAST
 
-SignatureSNVs is a method to generate signature SNVs for input into FEAST for source tracking ([Shenhav et al. 2019](https://github.com/cozygene/FEAST)). The signature SNVs are selected from SNV output produced by running the metagenomic pipeline MIDAS ([Nayfach et al. 2017](https://github.com/snayfach/MIDAS)).
+Signature-SNVs is a method to generate signature SNVs for input into FEAST for source tracking ([Shenhav et al. 2019](https://github.com/cozygene/FEAST)). The signature SNVs are selected from SNV output produced by running the metagenomic pipeline MIDAS ([Nayfach et al. 2017](https://github.com/snayfach/MIDAS)). Signature-SNVs is described in our paper [Briscoe et al. 2023](https://www.biorxiv.org/content/10.1101/2022.05.28.493810v1).
 
 Source tracking is a broad term for methods that can estimate the percentage of a microbiome of interest that derives from differences potential sources. A sample of an infant's gut microbiome may be a _sink_ of interest 
 
