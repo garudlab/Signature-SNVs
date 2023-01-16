@@ -1,13 +1,15 @@
 # Signature SNVs for FEAST
 
-Signature-SNVs is a method to generate signature SNVs for input into FEAST for source tracking ([Shenhav et al. 2019](https://github.com/cozygene/FEAST)). The signature SNVs are selected from SNV output produced by running the metagenomic pipeline MIDAS ([Nayfach et al. 2017](https://github.com/snayfach/MIDAS)). Signature-SNVs is described in our paper [Briscoe et al. 2023](https://www.biorxiv.org/content/10.1101/2022.05.28.493810v1).
-
-Source tracking is a broad term for methods that can estimate the percentage of a microbiome of interest that derives from differences potential sources. A sample of an infant's gut microbiome may be a _sink_ of interest 
-
-Two key terms in understanding source tracking and our approach for signature selection are _sink_ and _source_. A _sink_ is a sample that you are interested in investigating the sources of, such as the gut microbiome of an infant. You may be interested in investigating how much the mother, the crib and the dog contribute to this infant's microbiome. You therefore collect samples from all these potential sources. Once you have whole metagenomic shotgun sequencing on these samples, you are ready to begin analysis to find signature SNVs. 
-
-A signature SNV is a SNV that has a higher probability of coming from one source over other sources or only the sink. The output of counts of the alternative and reference allele go into FEAST for source tracking. FEAST can be run as usual with this input. 
-
+## Introduction: 
+Elucidating the sources of a microbiome can provide insight into the ecological dynamics responsible for the formation of these communities. “Source tracking” approaches to date leverage species abundance information, however, single nucleotide variants (SNVs) may be more informative because of their high specificity to certain sources. To overcome the computational burden of utilizing all SNVs for a given sample, we introduce a novel method to identify signature SNVs for source tracking. The software provided here in this github generates signature SNVs from SNV tables generated from metagenomic data. In Briscoe et al. 2022 we show that signature SNVs used as input into a previously designed source tracking algorithm, FEAST, can more accurately estimate contributions than species and provide novel insights, demonstrated in three case studies.
+ 
+## What is source tracking?
+Source tracking is a broad term for methods that can estimate the percentage of a microbiome of interest that derives from different potential sources. A sample of an infant's gut microbiome may be a sink of interest (Figure 1). 
+Two key terms in understanding source tracking and our approach for signature selection are _sink_ and _source_. A _sink_ is a sample that you are interested in investigating the _sources_ of, such as the gut microbiome of an infant. You may be interested in investigating how much the mother, the crib and the dog contribute to this infant's microbiome. You therefore collect samples from all these potential sources. Once you have whole metagenomic shotgun sequencing on these samples, you are ready to begin source tracking analyses. 
+ 
+## What is a signature SNV? 
+A signature SNV is a SNV that has a higher probability of coming from one source over other sources or only the sink (Figure 1). Signature-SNVs can be used as input into FEAST for source tracking ([Shenhav et al. 2019](https://github.com/cozygene/FEAST)). Signature SNVs are selected from SNV output produced by running the metagenomic pipeline MIDAS ([Nayfach et al. 2016](https://github.com/snayfach/MIDAS)). Generation of signature-SNVs is described in our paper [Briscoe et al. 2023](https://www.biorxiv.org/content/10.1101/2022.05.28.493810v2). This software generates signature SNVs, which can be used as input into FEAST. 
+ 
 The general workflow is as follows:
 
 ```mermaid
@@ -56,6 +58,8 @@ A(Metagenomic shotgun data)-->B(MIDAS)
     ```
     python3 -m pip install Signature-SNVs==0.0.1
     ```
+
+3. Update configs/config.yaml to your local paths. See [example config.yaml](#exampleinput).
 
 2. [Option 1] Run code as a module. Start up python in command line interface, then import and run module with example1
 
