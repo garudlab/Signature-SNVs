@@ -59,22 +59,22 @@ A(Metagenomic shotgun data)-->B(MIDAS)
     python3 -m pip install Signature-SNVs==0.0.1
     ```
 
-3. Update configs/config.yaml to your local paths. See [example config.yaml](#exampleinput).
+3. Update the paths inside configs/config.yaml to your local paths. See [example config.yaml](#exampleinput).
 
 2. [Option 1] Run code as a module. Start up python in command line interface, then import and run module with example1
 
-    In terminal:
+    In terminal, open python terminal:
     ```
     python3
     ```
 
-    In interactive python:
+    Once inside python terminal:
     ```
     from signature_snvs import signature_snvs
     signature_snvs.signature_snvs_per_species(species="Bacteroides_uniformis_57318", min_reads=5, start_index=1, end_index=200, config_file_path="configs/config.yaml")
     ```
 
-4. [Option 2] Run on command line with example1
+	[Option 2] Run on command line with example1
 
     ```
     python <site-packages_directory>/signature_snvs/signature_snvs_cli.py --species Bacteroides_uniformis_57318 --min_reads 5 --start_index 1 --end_index 200 --config_file_path configs/config.yaml
@@ -88,7 +88,7 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 
 ## <a name="quickstart"> Quick Start </a>
 
-1. Install Signature-SNVs with [pip](https://pypi.org/project/Signature-SNVs/0.0.1/). (takes about 1 min)
+1. Install Signature-SNVs with [pip](https://pypi.org/project/Signature-SNVs/0.0.1/) (recommended to install inside a virtual environment). This should take about 1 minute. 
     This also automatically updates any dependencies. 
 
     ```
@@ -102,9 +102,9 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 
     There can be a single directory containing the following:
 
-    1. **sink_source.csv**  a comma-delimited file with the sink source configuration. It should have the accession numbers  in the first column for each sink of interest, and in the following columns, the accession numbers for the sources for each sink (example [sink_source.csv](#sinksource))
-    2. **midas_output/snps** MIDAS output with a subdirectory called 'snps/' with it's own subdirectory for each species. In side each species subsubdirectory are two bzipped files 'snps_depth.txt.bz2' and 'snps_ref_freq.txt.bz2' output from MIDAS snps and MIDAS merge_snps step
-    3. **config.yaml** YAML indicating the directory with input files, the snp directory, and the output directory for the signature SNVs (example [config.yaml](#config))
+    1. **sink_source.csv**  a comma-delimited file with a table consisting of one row per source tracking experiment. The first column of the table should have the accession numbers for each sink of interest, and the following columns should have the accession numbers for the sources for each source tracking experiment. There should be as many rows as source tracking experiments. (example [sink_source.csv](#sinksource))
+    2. **midas_output/snps** MIDAS output with a subdirectory called 'snps/', which contains subdirectories for each species. In side each species subsubdirectory are two bzipped files 'snps_depth.txt.bz2' and 'snps_ref_freq.txt.bz2' output from MIDAS snps and MIDAS merge_snps step
+    3. **config.yaml** YAML indicating the full path for the input files, the midas_output/snps directory, and the output directory for the signature SNVs (example [config.yaml](#config))
 
 3. Determine input arguments:
     * **species** : the species you want to get signature SNVs for
