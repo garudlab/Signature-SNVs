@@ -15,7 +15,7 @@ require(sf)
 # devtools::install_github("dkahle/ggmap", ref = "tidyup")
 # 
 
-
+#install.packages("rgeos")
 
 
 ## MYD AD
@@ -28,7 +28,7 @@ code_dir = '~/Documents/FEASTX/code/pipeline/'
 require(rgeos)
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
-meta_by_accession = read.csv(paste0(input_dir,"metadata_merge.csv"),stringsAsFactors = FALSE)
+meta_by_accession = read.csv(paste0(input_dir,"Metadata/metadata_merge.csv"),stringsAsFactors = FALSE)
 unique_meta = meta_by_accession[!duplicated(meta_by_accession$station), ]
 unique_meta$longitude = unique_meta$Longitude_East
 unique_meta$latitude = unique_meta$Latitude_North
@@ -70,9 +70,10 @@ require(ggrepel)
 #   theme(panel.background = element_rect(fill = "azure1", colour = "azure1")) +
 #   geom_label(aes(x=rounded_longitude, y= rounded_latitude, label=station_number),label.size = 0.25,size=3)
 # 
-single_ocean_label = data.frame(ocean = c("Indian Ocean", "Red Sea", "Mediterreanean Sea", "South Atlantic Ocean",
-                                          "North Atlantic Ocean", "South Pacific Ocean", "North Pacific Ocean",
-                                          "South Ocean"),
+single_ocean_label = data.frame(ocean = c("Indian Ocean\n(IO)", "Red Sea\n(RS)", "Mediterreanean Sea\n(MS)", 
+                                          "South Atlantic Ocean\n(SAO)","North Atlantic Ocean\n(NAO)", 
+                                          "South Pacific Ocean\n(SPO)", "North Pacific Ocean\n(NPO)",
+                                          "South Ocean (SO)"),
                                 sea_area = c("IO", "RS", "MS", "SAO",
                                              "NAO", "SPO", "NPO",
                                              "SO"),
@@ -90,13 +91,16 @@ p <- ggplot(unique_meta, aes(x=longitude, y= latitude,
   geom_point(alpha = 1, size = 1) +
   scale_color_manual(values = mypalette) + 
   scale_fill_manual(values = mypalette) + 
-  theme(panel.background = element_rect(fill = "azure1", colour = "azure1")) +
+  theme(panel.background = element_rect(fill = "azure1", colour = "azure1"),
+        text = element_text(size=20)) +
   geom_label_repel(color = "white",
                   min.segment.length = 0,
                   aes(x=longitude, y= latitude, label=station_number),
                   box.padding = 0.1) +
+  labs(fill = "Ocean") +
+  
   geom_text(data = single_ocean_label, aes(x=longitude, y= latitude, label=ocean),
-            color = "black", check_overlap = T, size = 5) + guides(fill = guide_legend(override.aes = aes(label = "")))
+            color = "black", check_overlap = T, size = 6) + guides(fill = guide_legend(override.aes = aes(label = "")))
   
 
 p

@@ -1,19 +1,27 @@
 # Processing scripts for SourceTracking
 process_snv_data <- function(snv_matrix = NA,metadata = NA,select_samples = NA,
-                             dropout = 0,non_zero_species = NA, robustness_testing = NA,
+                             dropout = 0,non_zero_species = NA, robustness_testing = FALSE,
                              proportion_species = NA, proportion_snvs = NA, robustness_testing_seed = NA){
+  
+  
+  #snv_matrix = matrix_dat
+  #metadata = fam_ref
+  #select_samples = select_samples
+  
+  
   
   print("original dimensions")
   print(dim(snv_matrix))
   
   keep_name =  snv_matrix[,1]
-  mat_index = which(fam_ref %in% select_samples)
-  snv_matrix = snv_matrix[,mat_index]
+  #mat_index = which(fam_ref %in% select_samples)
+  snv_matrix = snv_matrix[,2:ncol(snv_matrix)]
   snv_matrix = apply(snv_matrix, 2,as.integer)
   
   snv_matrix[is.na(snv_matrix)] = 0
+  #dim(snv_matrix)
   colnames(snv_matrix) = select_samples
-  row.names(snv_matrix) = keep_name
+  row.names(snv_matrix) = unlist(keep_name)
   
   if(dropout < 0){
     rnames = row.names(snv_matrix)
