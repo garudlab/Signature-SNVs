@@ -209,11 +209,11 @@ You may write your own script, following these recommended guidelines
 
 	**metadata example 1**
 	
-	<img src="readme_images/metadata_feast.png" />
+	<img src="readme_images/metadata_feast.png" width="250"/>
 	
 	**metadata example 2**
 	
-	<img src="readme_images/metadata_feast1.png" />
+	<img src="readme_images/metadata_feast1.png" width="350"/>
 	
 5. Run the following FEAST function in R
  
@@ -225,19 +225,19 @@ You may write your own script, following these recommended guidelines
 6. View the output showing the estimated source tracking proportions. 
 	**feast initial output**
 	
-	<img src="readme_images/feast_initial_output.png" />
+	<img src="readme_images/feast_initial_output.png" width="350"/>
 
 With the script above you can produce a formatted output like below:
 
 **formatted output**
 
-<img src="readme_images/formatted_output.png" />
+<img src="readme_images/formatted_output.png" width="200" />
 
 and in csv format
 
 **csv_output**
 
-<img src="readme_images/csv_output.png" width="200"/>
+<img src="readme_images/csv_output.png" width="350"/>
 
 
 
