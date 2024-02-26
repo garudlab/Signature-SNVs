@@ -198,7 +198,7 @@ You may write your own script, following these recommended guidelines
 2. Place these files in a merged_snvs folder at the same level as sink_source.csv
 3. Load the signature SNVs file into a matrix. No modifications are neccessary as you will want the counts data. 
 
-	**snv\_count\_matrix example**. 2 signature SNVs with ref and alt counts for each. 1 sink 10 sources. 
+	**snv\_count\_matrix example**. Two signature SNVs with ref and alt counts for each. There are 1 sink and 10 sources in this example 
 
 	<img src="readme_images/sig_snvs.png" />
 
@@ -208,9 +208,11 @@ You may write your own script, following these recommended guidelines
 4. Generate a metadata file for feast input ( see metadata example below)
 
 	**metadata example 1**
+	
 	<img src="readme_images/metadata_feast.png" />
 	
 	**metadata example 2**
+	
 	<img src="readme_images/metadata_feast1.png" />
 	
 5. Run the following FEAST function in R
@@ -222,17 +224,20 @@ You may write your own script, following these recommended guidelines
 	```
 6. View the output showing the estimated source tracking proportions. 
 	**feast initial output**
-		<img src="readme_images/feast_initial_output.png" />
+	
+	<img src="readme_images/feast_initial_output.png" />
 
 With the script above you can produce a formatted output like below:
 
 **formatted output**
-		<img src="readme_images/formatted_output.png" />
+
+<img src="readme_images/formatted_output.png" />
 
 and in csv format
 
 **csv_output**
-		<img src="readme_images/csv_output.png" />
+
+<img src="readme_images/csv_output.png" width="200"/>
 
 
 
