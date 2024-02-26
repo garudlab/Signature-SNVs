@@ -140,13 +140,13 @@ for(fam_id_i in c(1:length(fam_ids))){
     orig_names_output = names(FEAST_output)
     FEAST_output = do.call(rbind,FEAST_output)
     print(Sys.time() - t1)
-    all_times = data.frame(variable =  orig_names_output , value = FEAST_output[,1])
-    print(all_times)
+    formatted_output = data.frame(variable =  orig_names_output , value = FEAST_output[,1])
     
-    ALLtimes[[paste0("fam_" , fam_id)]] = all_times
+    
+    ALLtimes[[paste0("fam_" , fam_id)]] = formatted_output
     # for writing to table
     
-    # write.table(all_times,paste0(input_dir,"snv_feast_results/FEAST_input", 
+    # write.table(formatted_output,paste0(input_dir,"snv_feast_results/FEAST_input", 
     #                              file_string,"_fam_",fam_id,".csv"),sep = ",",
     #             col.names = FALSE,
     #             row.names= FALSE,quote = FALSE)
