@@ -1,0 +1,6 @@
+,Test1,Test2,Test3,Test4
+0,True,False,False,False
+1,True,False,False,False
+2,False,False,False,True
+3,False,False,True,False
+4,False,True,False,False

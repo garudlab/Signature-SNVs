@@ -241,5 +241,61 @@ and in csv format
 
 
 
+## <a name="faq"> FAQ </a>
+
+
+### How do I incorporate multiple species in my analysis?
+
+SignatureSNVs runs on the data from one species at a time, but you can concatenate the results from different species into a single table. This works because SignatureSNVs produces tables with columns that match the order of your sink_source.csv inserts columns for missing species. This columns will contain nan values.
+
+### Will Signature SNVs still work if not every sample is represented in the midas snps output of every species?
+
+Yes. SignatureSNVs final output table will match the sample columns in your sink_source.csv regardless of whether all those samples are represented in the MIDAS output. It will run the analysis on the data present in the MIDAS table, and before finally outputting the table of signature SNVs it will insert columns containing nan values for the missing samples.  
+
+To illustrate, consider 3 samples from the [Tara Oceans dataset](https://ocean-microbiome.embl.de/companion.html): ERR599057,ERR598993, ERR315862. Taking a closer look at the MIDAS snps output for Alpha proteobacterium, we found that only 2 of these samples were represented in snps\_depth.txt and snps\_ref\_freq.txt:
+
+**snps_depth.txt**
+
+||ERR599057|ERR315862|
+|--------|---|---|
+|CP003801\|1663\|T	| 14	| 71|
+|CP003801\|1696\|A	| 19	| 88|
+|CP003801\|2233\|T	| 92	| 121|
+
+
+**snps\_ref\_freq.txt**
+
+|                   | ERR599057           | ERR315862            |
+|-------------------|---------------------|----------------------|
+| CP003801\|1663\|T | 0.5714285714285714  | 0.0                  |
+| CP003801\|1696\|A | 0.42105263157894735 | 0.011363636363636364 |
+| CP003801\|2233\|T | 1.0                 | 1.0                  |
+
+SignatureSNVs will account for this, and output the following table: 
+
+**signature\_snvs.csv**
+
+|                   | ERR599057    |  ERR598993     | ERR315862    |
+|-------------------|----------------|----------|------------|
+|Alt\_Alpha\_proteobacterium\_62227\|CP003801\|1663\|T|3.0|nan|71.0|
+|Alt\_Alpha\_proteobacterium\_62227\|CP003801\|1696\|A|1.0|nan|87.0|
+|Alt\_Alpha\_proteobacterium\_62227\|CP003801\|2233\|T|1.0|nan|0.0|
+|Ref\_Alpha\_proteobacterium\_62227\|CP003801\|1663\|T|17.0|nan|0.0|
+|Ref\_Alpha\_proteobacterium\_62227\|CP003801\|1696\|A|27.0|nan|1.0|
+|Ref\_Alpha\_proteobacterium\_62227\|CP003801\|2233\|T|11.0|nan|121.0|
+
+
+
+## <a name="midas2"> MIDAS 2 Compatibility </a>
+
+MIDAS 2 output is compatible with our software. The output files from the merge step for SNVs in MIDAS2 have the same structure as the original MIDAS software, described in the [MIDAS2 documentation](https://midas2.readthedocs.io/en/latest/snv_module.html#cross-samples-analysis)
+
+| Comparison	| MIDAS | MIDAS2	|
+|--------|---|---|
+|	merge midas command | merge_midas.py snps | midas2 merge_snps|
+| SNPs depth output file |{species}/{species}.snps_depth.txt | {species}/{species}.snps_depth.tsv.lz4 |
+| SNPs freq output file |{species}/{species}.snps\_ref\_freq.txt | {species}/{species}.snps_freqs.tsv.lz4 |
+
+
 
 
