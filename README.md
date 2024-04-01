@@ -285,6 +285,14 @@ SignatureSNVs will account for this, and output the following table:
 |Ref\_Alpha\_proteobacterium\_62227\|CP003801\|2233\|T|11.0|nan|121.0|
 
 
+This table is the result of running Signature SNVs from example_1 directory:
+
+```
+python ../src/signature_snvs/signature_snvs_cli.py --species Bacteroides_uniformis_57318_short --min_reads 5 --start_index 1 --end_index 200 --config_file_path config.yaml
+
+```
+
+
 
 ## <a name="midas2"> MIDAS 2 Compatibility </a>
 
