@@ -252,7 +252,7 @@ SignatureSNVs runs on the data from one species at a time, but you can concatena
 
 Yes. SignatureSNVs final output table will match the sample columns in your sink_source.csv regardless of whether all those samples are represented in the MIDAS output. It will run the analysis on the data present in the MIDAS table, and before finally outputting the table of signature SNVs it will insert columns containing nan values for the missing samples.  
 
-To illustrate, consider 3 samples from the [Tara Oceans dataset](https://ocean-microbiome.embl.de/companion.html): ERR599057,ERR598993, ERR315862. Taking a closer look at the MIDAS snps output for Alpha proteobacterium, we found that only 2 of these samples were represented in snps\_depth.txt and snps\_ref\_freq.txt:
+To illustrate, consider 3 samples from the [Tara Oceans dataset](https://ocean-microbiome.embl.de/companion.html): ERR599057, ERR598993, ERR315862 where the first sample is the sink and the latter two are sources. Taking a closer look at the MIDAS snps output for Alpha proteobacterium, we found that only 2 of these samples were represented in snps\_depth.txt and snps\_ref\_freq.txt:
 
 **snps_depth.txt**
 
