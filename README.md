@@ -35,6 +35,15 @@ A(Metagenomic shotgun data)-->B(MIDAS)
 1. [Optional Pre-processing of signature SNV files](#preprocessing)
 1. [Optional Post-processing of signature SNV files](#postprocessing)
 1. [Example run of FEAST](#feast)
+2. [Optional Pre-Processing](#preprocessing)
+3. [Optional Post-Processing](#postprocessing)
+4. [Optional downstream analysis of Signature-SNVs - specific deails on FEAST] (#downstream)
+5. [FAQ](#faq)
+6. [MIDAS 2 Compatibility](#midas2)
+
+
+
+
 
 
 ## <a name="tutorial"> Tutorial </a>
@@ -293,16 +302,27 @@ python ../src/signature_snvs/signature_snvs_cli.py --species Bacteroides_uniform
 ```
 
 
-
 ## <a name="midas2"> MIDAS 2 Compatibility </a>
 
-MIDAS 2 output is compatible with our software. The output files from the merge step for SNVs in MIDAS2 have the same structure as the original MIDAS software, described in the [MIDAS2 documentation](https://midas2.readthedocs.io/en/latest/snv_module.html#cross-samples-analysis)
+MIDAS2 output is compatible with our software. The output files from the merge step for SNVs in MIDAS2 have the same structure as the output files from the original MIDAS software, described in the [MIDAS2 documentation](https://midas2.readthedocs.io/en/latest/snv_module.html#cross-samples-analysis). 
+
 
 | Comparison	| MIDAS | MIDAS2	|
 |--------|---|---|
 |	merge midas command | merge_midas.py snps | midas2 merge_snps|
 | SNPs depth output file |{species}/{species}.snps_depth.txt | {species}/{species}.snps_depth.tsv.lz4 |
 | SNPs freq output file |{species}/{species}.snps\_ref\_freq.txt | {species}/{species}.snps_freqs.tsv.lz4 |
+
+
+To make the output files match what SignatureSNVs expects, run the following lines to convert the files:
+
+```
+lz4 -dck snps_freqs.tsv.lz4 | bzip2 -z > snps_ref_freq.txt.bz2
+lz4 -dck snps_depth.tsv.lz4 | bzip2 -z > snps_depth.txt.bz2
+```
+-d is to decompress, -c is to write to stdout, -k to keep the original file (if you want to keep the original file).
+
+
 
 
 
